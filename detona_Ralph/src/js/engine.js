@@ -9,7 +9,7 @@ const state = {
 
     values: {
         
-        gameVelocity: 1500,
+        gameVelocity: 1000,
         hitPosition: 0,
         result: 0,
         currentTme: 60,
@@ -31,10 +31,18 @@ function countDown(){
     }
 }
 
+function playSound(audioName){
+    let audio = new Audio("./src/sounds/hit.m4a");
+    audio.volume = 0.2;
+    audio.play();
+}
+
+
 function randomSquare(){
 
     state.view.squares.forEach((square) =>{
         square.classList.remove("enemy");
+        
     });
 
     let randomNumber = Math.floor(Math.random() * 9);
@@ -55,6 +63,7 @@ function addListenerHitbox(){
                 state.values.result++;
                 state.view.score.textContent = state.values.result;
                 state.values.hitPosition = null;
+                playSound();
             }
 
         })
