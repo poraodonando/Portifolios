@@ -9,13 +9,14 @@ const state = {
 
     values: {
         
-        gameVelocity: 1000,
+        gameVelocity: 100,
         hitPosition: 0,
         result: 0,
         currentTme: 60,
     },
+
     actions: {
-        timerId: setInterval(randomSquare, 1000),
+        timerId: setInterval(randomSquare, 250),
         countDownTimerId: setInterval(countDown, 1000),
       },
 }
@@ -27,7 +28,7 @@ function countDown(){
     if(state.values.currentTme <= 0 ){
         clearInterval(state.actions.countDownTimerId);
         clearInterval(state.actions.timerId);
-        alert("Game Over" + state.values.result);
+        alert("Game Over " + state.values.result);
     }
 }
 
