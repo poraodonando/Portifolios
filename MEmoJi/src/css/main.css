@@ -1,0 +1,21 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #fc1e8a;
+}
+.container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background: linear-gradient(325deg, 
+    rgb(0, 47, 255), 
+    rgb(225, 0, 255),
+    rgb(144, 7, 235), 
+    rgb(0, 255, 200));
+    padding: 40px 60px;
+}
